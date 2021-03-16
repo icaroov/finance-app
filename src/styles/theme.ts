@@ -1,17 +1,24 @@
 export default {
+  grid: {
+    container: '130rem',
+    gutter: '3.2rem'
+  },
   colors: {
-    background: '#F0F2F5',
-    red: '#E52E4D',
+    background: 'rgba(16,18,27,0.4)',
+    contentBg: 'rgba(146,151,179,0.13)',
+    popupBg: 'rgb(22, 25, 37)',
+    borderColor: 'rgba(113, 119, 144, 0.25)',
+    white: '#f9fafb',
+    gray: '#999ba5',
     blue: '#5429CC',
-    blueLight: '#6933FF',
+    green: '#33CC95',
+    lightBlue: '#3a6df0',
     textTitle: '#363F5F',
-    textBody: '#969CB3',
-    shape: '#FFFFFF',
-    green: '#33CC95'
+    scroll: 'rgb(1, 2, 3, 0.4)',
   },
   font: {
     family:
-      "Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+      "Poppins, sans-serif",
     light: 300,
     normal: 400,
     bold: 600,

@@ -1,4 +1,4 @@
-import { createGlobalStyle, css } from "styled-components"
+import { createGlobalStyle, css } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
 * {
@@ -16,26 +16,54 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 html {
-  @media (max-width: 1080px) {
-    font-size: 93.75%; // 15px
-  }
+  font-size: 62.5%;
+  line-height: 1.15;
+  
+  -webkit-text-size-adjust: 100%;
 
-  @media (max-width: 720px) {
-    font-size: 87.5%; // 14px
+::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-bg);
+  border-radius: 10px;
   }
 }
 
-${({ theme }) => css`
-  body {
-    background: ${theme.colors.background};
-  }
+body {
+  background-image: url('https://4kwallpapers.com/images/wallpapers/macos-big-sur-apple-layers-fluidic-colorful-dark-wwdc-2020-5120x2880-1432.jpg');
+  background-size: cover;
+  background-position: center;
 
-  body, input, textarea, button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 2rem;
+  width: 100%;
+  height: 100vh;
+
+}
+
+${({ theme }) => css`
+  body,
+  input,
+  textarea,
+  button {
     font-family: ${theme.font.family};
     font-weight: ${theme.font.normal};
   }
 
-  h1, h2, h3, h4, h5, h6, strong {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong {
     font-weight: ${theme.font.bold};
   }
 `}
