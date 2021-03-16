@@ -55,6 +55,7 @@ ${({ theme }) => css`
   button {
     font-family: ${theme.font.family};
     font-weight: ${theme.font.normal};
+    color: ${theme.colors.white};
   }
 
   h1,
