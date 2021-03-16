@@ -27,6 +27,10 @@ export const Container = styled.div`
     @media (max-width: 600px) {
       width: 100%;
       max-height: 100%;
+
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
     }
   `}
 `
@@ -58,7 +62,7 @@ export const Value = styled.span<ValueProps>`
     font-size: ${theme.font.sizes.xxlarge};
     color: ${theme.colors[color]};
 
-    @media (max-width: 600px) {
+    @media (max-width: 1200px) {
       font-size: ${theme.font.sizes.xlarge};
     }
   `}
