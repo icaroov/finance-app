@@ -1,14 +1,24 @@
-import { render } from "react-dom"
-import { ThemeProvider } from "styled-components"
-import App from "./App"
+import { ThemeProvider } from 'styled-components'
+import { render } from 'react-dom'
+import { createServer } from 'miragejs'
 
-import { GlobalStyle } from "./styles/global"
-import theme from "./styles/theme"
+import App from './App'
+import { GlobalStyle } from './styles/global'
+import theme from './styles/theme'
+
+createServer({
+  routes() {
+    this.namespace = 'api'
+    this.get('/transactions', () => ({
+      reminders: [{ id: 1, title: 'teste 1', amount: 400, type: 'food' }],
+    }))
+  },
+})
 
 render(
   <ThemeProvider theme={theme}>
     <App />
     <GlobalStyle />
   </ThemeProvider>,
-  document.getElementById("root")
+  document.getElementById('root')
 )
