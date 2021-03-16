@@ -1,4 +1,3 @@
-import Box from '../Box'
 import Header from '../Header'
 
 import * as Styled from './styles'
@@ -9,10 +8,10 @@ type LayoutProps = {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <Box>
+    <Styled.Container>
       <Header />
-      <Styled.Main>{children}</Styled.Main>
-    </Box>
+      <main>{children}</main>
+    </Styled.Container>
   )
 }
 
