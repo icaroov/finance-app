@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components'
 
+import { CardProps } from '.'
+
 export const Container = styled.div`
   ${({ theme }) => css`
     display: flex;
@@ -21,10 +23,15 @@ export const Container = styled.div`
       transform: scale(1.02);
       background-color: ${theme.colors.background};
     }
+
+    @media (max-width: 600px) {
+      width: 100%;
+      max-height: 100%;
+    }
   `}
 `
 
-export const Wrapper = styled.div`
+export const Header = styled.header`
   ${({ theme }) => css`
     display: flex;
     align-items: center;
@@ -43,10 +50,16 @@ export const Title = styled.span`
 
 export const Icon = styled.img``
 
-export const Money = styled.span`
-  ${({ theme }) => css`
+type ValueProps = Pick<CardProps, 'color'>
+
+export const Value = styled.span<ValueProps>`
+  ${({ theme, color = 'white' }) => css`
     margin-top: 1.6rem;
     font-size: ${theme.font.sizes.xxlarge};
-    color: ${theme.colors.green};
+    color: ${theme.colors[color]};
+
+    @media (max-width: 600px) {
+      font-size: ${theme.font.sizes.xlarge};
+    }
   `}
 `

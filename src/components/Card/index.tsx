@@ -1,19 +1,21 @@
 import * as Styled from './styles'
 
-type CardProps = {
-  entry: string
-  money: string
+export type CardProps = {
+  title: string
+  value: string
   icon: string
+  color?: 'green' | 'red' | 'white'
 }
 
-const Card = ({ entry, money, icon }: CardProps) => {
+const Card = ({ title, value, icon, color = 'white' }: CardProps) => {
   return (
     <Styled.Container>
-      <Styled.Wrapper>
-        <Styled.Title>{entry}</Styled.Title>
+      <Styled.Header>
+        <Styled.Title>{title}</Styled.Title>
         <Styled.Icon src={icon} />
-      </Styled.Wrapper>
-      <Styled.Money>{money}</Styled.Money>
+      </Styled.Header>
+
+      <Styled.Value color={color}>{value}</Styled.Value>
     </Styled.Container>
   )
 }
