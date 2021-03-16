@@ -1,8 +1,10 @@
+import { Layout, Dashboard } from './components'
+
 function App() {
   return (
-    <div className='App'>
-      <h1>hello</h1>
-    </div>
+    <Layout>
+      <Dashboard />
+    </Layout>
   )
 }
 
