@@ -20,16 +20,6 @@ html {
   line-height: 1.15;
   
   -webkit-text-size-adjust: 100%;
-
-::-webkit-scrollbar {
-  width: 6px;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--scrollbar-bg);
-  border-radius: 10px;
-  }
 }
 
 body {
