@@ -12,10 +12,11 @@ export default {
     red: '#E52E4D',
     green: '#33CC95',
     gray: '#999ba5',
-    blue: '#5429CC',
+    blue: '#1f59ee',
     lightBlue: '#3a6df0',
     textTitle: '#363F5F',
     scroll: 'rgb(1, 2, 3, 0.4)',
+    overlay: 'rgba(36, 39, 59, 0.8)',
   },
   spacings: {
     borderRadius: '2rem'
