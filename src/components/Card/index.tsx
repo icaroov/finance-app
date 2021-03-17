@@ -2,7 +2,7 @@ import * as Styled from './styles'
 
 export type CardProps = {
   title: string
-  value: string
+  value: number | string
   icon: string
   color?: 'green' | 'red' | 'white'
 }

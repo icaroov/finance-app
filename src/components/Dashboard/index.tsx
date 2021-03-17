@@ -1,4 +1,5 @@
 import { useModal } from '../../hooks/useModal'
+import { useTransaction } from '../../hooks/useTransactions'
 
 import income from '../../assets/income.svg'
 import outcome from '../../assets/outcome.svg'
@@ -7,11 +8,32 @@ import total from '../../assets/total.svg'
 import Card from '../Card'
 import Button from '../Button'
 import Table from '../Table'
+import { format } from '../../utils/helperFunctions'
 
 import * as Styled from './styles'
 
 const Dashboard = () => {
   const { handleOpenModal } = useModal()
+  const { transactions } = useTransaction()
+
+  const summary = transactions.reduce(
+    (acc, transaction) => {
+      if (transaction.type === 'deposit') {
+        acc.deposits += transaction.amount
+        acc.total += transaction.amount
+      } else {
+        acc.withdraws += transaction.amount
+        acc.total -= transaction.amount
+      }
+
+      return acc
+    },
+    {
+      deposits: 0,
+      withdraws: 0,
+      total: 0,
+    }
+  )
 
   return (
     <Styled.Container>
@@ -19,11 +41,20 @@ const Dashboard = () => {
         <Card
           title='Entradas'
           icon={income}
-          value='R$ 17.400,00'
+          value={format.currency(summary.deposits)}
           color='green'
         />
-        <Card title='Saídas' icon={outcome} value='- R$ 1.259,00' color='red' />
-        <Card title='Total' icon={total} value='R$ 16.141,00' />
+        <Card
+          title='Saídas'
+          icon={outcome}
+          value={`- ${format.currency(summary.withdraws)}`}
+          color='red'
+        />
+        <Card
+          title='Total'
+          icon={total}
+          value={format.currency(summary.total)}
+        />
       </Styled.CardWrapper>
 
       <Table />
