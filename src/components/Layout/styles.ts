@@ -11,7 +11,7 @@ export const Container = styled.div`
     flex-direction: column;
 
     overflow: hidden;
-    border-radius: 14px;
+    border-radius: ${theme.spacings.borderRadius};
     backdrop-filter: blur(20px);
 
     font-size: ${theme.font.sizes.medium};
@@ -26,12 +26,12 @@ export const Container = styled.div`
 
       ::-webkit-scrollbar {
         width: 6px;
-        border-radius: 10px;
+        border-radius: ${theme.spacings.borderRadius};
       }
 
       ::-webkit-scrollbar-thumb {
         background: ${theme.colors.scroll};
-        border-radius: 10px;
+        border-radius: ${theme.spacings.borderRadius};
       }
     }
   `}

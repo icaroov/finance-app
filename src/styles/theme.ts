@@ -17,6 +17,9 @@ export default {
     textTitle: '#363F5F',
     scroll: 'rgb(1, 2, 3, 0.4)',
   },
+  spacings: {
+    borderRadius: '2rem'
+  },
   font: {
     family:
       "Poppins, sans-serif",

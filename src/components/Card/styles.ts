@@ -12,7 +12,7 @@ export const Container = styled.div`
     max-height: 12rem;
     transition: 0.3s ease;
 
-    border-radius: 14px;
+    border-radius: ${theme.spacings.borderRadius};
     color: ${theme.colors.white};
     border: 1px solid ${theme.colors.background};
     background-color: ${theme.colors.contentBg};

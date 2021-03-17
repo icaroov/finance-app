@@ -10,3 +10,7 @@ export const CardWrapper = styled.section`
     flex-direction: column;
   }
 `
+export const ButtonSection = styled.section`
+  display: flex;
+  justify-content: flex-end;
+`

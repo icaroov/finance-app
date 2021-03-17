@@ -3,6 +3,7 @@ import outcome from '../../assets/outcome.svg'
 import total from '../../assets/total.svg'
 
 import Card from '../Card'
+import Button from '../Button'
 import Table from '../Table'
 
 import * as Styled from './styles'
@@ -22,6 +23,10 @@ const Dashboard = () => {
       </Styled.CardWrapper>
 
       <Table />
+
+      <Styled.ButtonSection>
+        <Button>+</Button>
+      </Styled.ButtonSection>
     </Styled.Container>
   )
 }

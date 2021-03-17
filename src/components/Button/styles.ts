@@ -2,20 +2,31 @@ import styled, { css } from 'styled-components'
 
 export const Container = styled.button`
   ${({ theme }) => css`
-    border: none;
-    padding: 0.08rem 2.6rem;
+    display: flex;
+    justify-content: center;
+
+    max-width: 3rem;
     margin-top: 1.6rem;
-    border-radius: 2.0rem;
-    
-    transition: 0.3s;
+    padding: 0.08rem 2.6rem;
+
+    border: none;
+    border-radius: ${theme.spacings.borderRadius};
+
+    transition: filter 0.3s;
     white-space: nowrap;
 
-    font-size: ${theme.font.sizes.medium};
     color: ${theme.colors.white};
+    font-size: ${theme.font.sizes.medium};
     background-color: ${theme.colors.lightBlue};
 
+    &:focus {
+      outline-width: 1px;
+      outline-style: dashed;
+      outline-color: ${theme.colors.blue};
+    }
+
     &:hover {
-      background: ${theme.colors.blue};
+      filter: brightness(0.9);
     }
   `}
 `
