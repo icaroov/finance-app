@@ -11,7 +11,7 @@ export const Container = styled.button`
     border: none;
     border-radius: ${theme.spacings.borderRadius};
 
-    transition: filter 0.3s;
+    transition: 0.3s;
     white-space: nowrap;
 
     color: ${theme.colors.white};
@@ -30,7 +30,7 @@ export const Container = styled.button`
     }
 
     &:hover {
-      filter: brightness(0.9);
+      background-color: ${theme.colors.blue};
     }
   `}
 `
