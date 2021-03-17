@@ -28,6 +28,13 @@ const Modal = () => {
     setType(handleType)
   }
 
+  function resetInputs() {
+    setTitle('')
+    setValue(0)
+    setCategory('')
+    setType(type)
+  }
+
   function handleSubmit(event: React.FormEvent) {
     event.preventDefault()
 
@@ -40,10 +47,13 @@ const Modal = () => {
 
     try {
       api.post('/transactions', data)
+      resetInputs()
     } catch (error) {
       console.log(error.message)
     }
   }
+
+  const isDisable = title === '' || value === 0 || category === ''
 
   return (
     <ReactModal
@@ -64,6 +74,7 @@ const Modal = () => {
         <Styled.Content>
           <Styled.Form onSubmit={handleSubmit}>
             <input
+              autoFocus
               type='text'
               placeholder='Título'
               value={title}
@@ -104,7 +115,7 @@ const Modal = () => {
               value={category}
               onChange={(event) => setCategory(event.target.value)}
             />
-            <Button type='submit'>Cadastrar</Button>
+            <Button type='submit' disabled={isDisable}>Cadastrar</Button>
           </Styled.Form>
         </Styled.Content>
       </Styled.Container>
