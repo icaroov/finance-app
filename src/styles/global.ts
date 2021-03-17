@@ -57,6 +57,31 @@ ${({ theme }) => css`
   strong {
     font-weight: ${theme.font.bold};
   }
+
+  .react-modal-overlay {
+    background-color: ${theme.colors.overlay};
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .react-modal-content {
+    width: 100%;
+    max-width: 500px;
+    padding: 3rem 4rem;
+
+    outline: none;
+    box-shadow: 0px 6px 30px rgb(0, 0, 0, 0.4);
+    border-radius: ${theme.spacings.borderRadius};
+    background-color: ${theme.colors.popupBg};
+  }
 `}
 
 button {
