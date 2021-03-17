@@ -6,7 +6,7 @@ import outcomeIcon from '../../assets/outcome.svg'
 import closeIcon from '../../assets/close.svg'
 
 import { useModal } from '../../hooks/useModal'
-import api from '../../services/api'
+import { useTransaction } from '../../hooks/useTransactions'
 import Button from '../Button'
 
 import * as Styled from './styles'
@@ -18,11 +18,12 @@ ReactModal.setAppElement('#root')
 
 const Modal = () => {
   const [title, setTitle] = useState('')
-  const [value, setValue] = useState(0)
+  const [amount, setAmount] = useState(0)
   const [category, setCategory] = useState('')
   const [type, setType] = useState<ButtonType>('deposit')
 
   const { open, handleCloseModal } = useModal()
+  const { createTransaction } = useTransaction()
 
   function handleChangeType(handleType: ButtonType) {
     setType(handleType)
@@ -30,30 +31,26 @@ const Modal = () => {
 
   function resetInputs() {
     setTitle('')
-    setValue(0)
+    setAmount(0)
     setCategory('')
     setType(type)
   }
 
-  function handleSubmit(event: React.FormEvent) {
+  async function handleSubmit(event: React.FormEvent) {
     event.preventDefault()
 
-    const data = {
+    await createTransaction({
       title,
-      value,
+      amount,
       category,
       type,
-    }
+    })
 
-    try {
-      api.post('/transactions', data)
-      resetInputs()
-    } catch (error) {
-      console.log(error.message)
-    }
+    handleCloseModal()
+    resetInputs()
   }
 
-  const isDisable = title === '' || value === 0 || category === ''
+  const isDisable = title === '' || amount === 0 || category === ''
 
   return (
     <ReactModal
@@ -83,8 +80,8 @@ const Modal = () => {
             <input
               type='number'
               placeholder='Valor'
-              value={value}
-              onChange={(event) => setValue(Number(event.target.value))}
+              value={amount}
+              onChange={(event) => setAmount(Number(event.target.value))}
             />
 
             <Styled.ButtonTypeContainer>
@@ -115,7 +112,9 @@ const Modal = () => {
               value={category}
               onChange={(event) => setCategory(event.target.value)}
             />
-            <Button type='submit' disabled={isDisable}>Cadastrar</Button>
+            <Button type='submit' disabled={isDisable}>
+              Cadastrar
+            </Button>
           </Styled.Form>
         </Styled.Content>
       </Styled.Container>
