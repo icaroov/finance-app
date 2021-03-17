@@ -5,7 +5,6 @@ export const Container = styled.button`
     display: flex;
     justify-content: center;
 
-    max-width: 3rem;
     margin-top: 1.6rem;
     padding: 0.08rem 2.6rem;
 
@@ -18,6 +17,11 @@ export const Container = styled.button`
     color: ${theme.colors.white};
     font-size: ${theme.font.sizes.medium};
     background-color: ${theme.colors.lightBlue};
+
+    span {
+      font-weight: ${theme.font.bold};
+      font-size: ${theme.font.sizes.xlarge};
+    }
 
     &:focus {
       outline-width: 1px;

@@ -8,11 +8,14 @@ type ButtonTypes =
 
 type ButtonProps = {
   children: React.ReactNode
+  as?: React.ElementType
 } & ButtonTypes
 
-const Button = ({ children }: ButtonProps) => {
+const Button = ({ children, ...props }: ButtonProps) => {
   return (
-    <Styled.Container>{!!children && <span>{children}</span>}</Styled.Container>
+    <Styled.Container {...props}>
+      {!!children && <span>{children}</span>}
+    </Styled.Container>
   )
 }
 

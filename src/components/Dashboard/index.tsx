@@ -1,3 +1,5 @@
+import { useModal } from '../../hooks/useModal'
+
 import income from '../../assets/income.svg'
 import outcome from '../../assets/outcome.svg'
 import total from '../../assets/total.svg'
@@ -9,6 +11,8 @@ import Table from '../Table'
 import * as Styled from './styles'
 
 const Dashboard = () => {
+  const { handleOpenModal } = useModal()
+
   return (
     <Styled.Container>
       <Styled.CardWrapper>
@@ -25,7 +29,7 @@ const Dashboard = () => {
       <Table />
 
       <Styled.ButtonSection>
-        <Button>+</Button>
+        <Button onClick={handleOpenModal}>+</Button>
       </Styled.ButtonSection>
     </Styled.Container>
   )
