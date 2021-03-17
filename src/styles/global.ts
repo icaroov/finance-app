@@ -74,7 +74,7 @@ ${({ theme }) => css`
 
   .react-modal-content {
     width: 100%;
-    max-width: 500px;
+    max-width: 600px;
     padding: 3rem 4rem;
 
     outline: none;
