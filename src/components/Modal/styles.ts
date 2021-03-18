@@ -99,6 +99,11 @@ export const ButtonTypeContainer = styled.div`
     span {
       font-size: ${theme.font.sizes.medium};
     }
+
+    @media (max-width: 600px) {
+      display: flex;
+      flex-direction: column;
+    }
   `}
 `
 
