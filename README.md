@@ -8,7 +8,7 @@
 
 <p align="center">
  <a href="#-about">About</a> •
- <a href="#-whats-is-inside">Whats is inside?</a> •
+ <a href="#-whats-is-inside?">Whats is inside?</a> •
  <a href="#-how-to-run">How to run</a> •
  <a href="#-author">Author</a>
 </p>
@@ -18,7 +18,7 @@
 A simple personal finance project using as inspiration the design founded on [Dribbble](https://dribbble.com/shots/14831798-Glassmorphism-Big-Sur-Creative-Cloud-App-Redesign).
 The project does not contain a back-end, so I use [MirageJS](https://miragejs.com/) as a way to mock an API.
 
-## Whats is inside?
+## 📁 Whats is inside?
 
 - [Typescript](https://www.typescriptlang.org/)
 - [Axios](https://github.com/axios/axios)
